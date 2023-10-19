@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="da-DK">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="alternativ behandling,urtemedicin,akupunktur" />
+    <title>Den ultimative guide til alternativ behandling</title>
+    <!-- include stylesheet -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <!--body definere hovedindholdet alt det synlige tekst, billeder, links osv -->
+  <body>
+    <!--header er et semantisk tag og bruges til at definere en section eksempelvis som her navigation og dropdownmenuer-->
+    <header>
+      <div class="wrapper">
+        <div><a href="index.html">Logo</a></div>
+        <div class="dropdown">
+          <!--span er et neutralt tag der bruges til styling og manipulation 
+            - ændre opførsel eller udseendende på det indhold der er omkring. Man så style på indholdet uden at ramme de andre tags-->
+          <span>Behandlere</span>
+<!--ul uordnet liste-->
+          <ul>
+            <!--li definere et enkelt element i listen-->
+            <li><a href="">Akupunktur</a></li>
+            <li><a href="">Aromaterapi</a></li>
+            <li><a href="">Bach-blomstermeditation</a></li>
+            <li><a href="">BodyTalk</a></li>
+            <li><a href="">Cupping-terapi</a></li>
+            <li><a href="">Dorn-terapi</a></li>
+          </ul>
+        </div>
+<!--div element som tilføjes en class attribut giver mulighed for at style den specifikke div med css -->
+        <div class="dropdown">
+          <span>Behandlingsformer</span>
+          <ul>
+            <li><a href="akupunktur.html">Akupunktur</a></li>
+            <li><a href="">Aromaterapi</a></li>
+            <li><a href="">Bach-blomstermeditation</a></li>
+            <li><a href="">BodyTalk</a></li>
+            <li><a href="">Cupping-terapi</a></li>
+            <li><a href="">Dorn-terapi</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <span>Personlige fortællinger</span>
+          <ul>
+            <li><a href="">Kristinas historie</a></li>
+            <li><a href="">Sarahs historie</a></li>
+            <li><a href="">Christians historie</a></li>
+            <li><a href="">Kaspers historie</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <span>Diagnoser &amp; Symptomer</span>
+          <ul>
+            <li><a href="">Angst</a></li>
+            <li><a href="">Allergi</a></li>
+            <li><a href="">Bihule-betændelse</a></li>
+            <li><a href="">Crohns sygdom</a></li>
+            <li><a href="">Depression</a></li>
+            <li><a href="">Eksem</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <span>Artikler</span>
+          <ul>
+            <li><a href="">Akupunktur</a></li>
+            <li><a href="urtemedicin.html">Urtemedicin</a></li>
+            <li><a href="aromaterapi.html">Aromaterapi</a></li>
+            <li><a href="">Yoga</a></li>
+            <li><a href="">Homeopati</a></li>
+            <li><a href="">Andre artikler</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!--main er et semantisk tag og id er en attribut - main specificerer hovedindholdet på siden 
+      og når den sættes sammen med id betyder det, at man kan style det enkelte tag-->
+    <main id="forside">
+<!--section er et semantisk tag og bruges til at opdele siden i logiske sekrioner eller blokke 
+  det definere en selvstædig del af indholdet som herunder med overskriften-->
+      <section class="image">
+        <div class="wrapper">
+          <div class="description">
+            <h1>Den ultimative guide til alternativ behandling</h1>
+          </div>
+          <div class="left">
+          </div>
+        </div>
+      </section>
+
+      <section class="frontpage">
+        <div class="wrapper">
+          <a href="urtemedicin.html" class="thumbnail image-1">
+            <div class="teaser">
+              <p class="headline">Urtemedicin</p>
+              <p>Matrem mod migræne</p>
+            </div>
+          </a>
+          <a href="akupunktur.html" class="thumbnail image-2">
+            <div class="teaser">
+              <p class="headline">Akupunktur</p>
+              <p>Hvad er det og hvordan virker det?</p>
+            </div>
+          </a>
+          <a href="aromaterapi.html" class="thumbnail image-3">
+            <div class="teaser">
+              <p class="headline">Aromaterapi</p>
+              <p>Naturlig løsning til angst- og stresslindring</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </main>
+<!--footer er et semantisk tag og her skrives indhold som feks. copyright osv-->
+    <footer>
+      <div class="wrapper">
+        <p>Copyright 2023 - Den ultimative guide til alternativ behandling.dk</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

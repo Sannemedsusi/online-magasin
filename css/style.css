@@ -1,0 +1,397 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126 License: none (public domain)*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit; vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+display: block; }
+body {
+line-height: 1; }
+ol, ul {
+list-style: none; }
+blockquote, q {
+quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+content:'';
+content: none; }
+table {
+border-collapse: collapse;
+border-spacing: 0; }
+
+/* Hjemmeside CSS */
+body, html{
+  width:100%;
+  height:100%;
+}
+
+body {
+  /* display i flex mode */
+  display:flex;
+  /* der vokser "nedaf" */
+  flex-direction: column;
+}
+
+/* alle links er hvide, uden underline - undtagen på mouse-over */
+a{
+  color:white;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+/* wrapper gør at vi kan holde 100% width på baggrundsfarven, men samtidig en max-width på indholdet */
+/* bruges både på header og footer */
+.wrapper{
+  max-width: 1280px;
+  /* centrerer .wrapper i bredden */
+  margin: 0 auto;
+
+}
+
+header {
+  background-color: #415341;
+  padding: 0 20px;
+}
+header .wrapper{
+  /* display som flex (column) */
+  display: flex;
+}
+
+header .wrapper div {
+  padding: 30px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color:white;
+  align-items: center;
+}
+header .wrapper div:first-child{
+  /* flex-box for første element skal fylde helt ud */
+  flex-grow: 1;
+}
+
+/* dropdown på mouse-over */
+header .dropdown {
+  /* sæt til relevativ så absolute forholder sig til dette element */
+  position: relative;
+
+  /* giv fornemmelsen af at det er et link*/
+  cursor:pointer;
+}
+
+header .dropdown ul {
+  /* skjult når der ikke er mouse-over */
+  display: none;
+  /* absolut-positionering */
+  position: absolute;
+  /* z-index 1 gør at elementet er højere end resten */
+  z-index: 1;
+
+  /* Sæt topposition til lige under headeren */
+  top: 76px;
+
+  /* sæt left til 0px i forhold til header elementet */
+  left: 0px;
+
+  /* foruddefineret minimum-width */
+  min-width: 200px;
+
+  /* alm. styling*/
+  background-color: #415341;
+  color:white;
+  /* padding top right bottom left - vi har allerede nok space i toppen mellem menu og dropdown */
+  padding: 0 16px 8px 16px;
+}
+/* den sidste dropdown skal forholde sig til højre siden, ikke venstre */
+header .dropdown:last-child ul{
+  left:auto;
+  right:0;
+}
+
+header .dropdown ul li a{
+  /* links vises som en "block" så mouseover virker på hele bredden af dropdown menu */
+  display:block;
+  /* en lille smule mellemrum */
+  padding: 10px 0;
+}
+
+header .dropdown:hover ul {
+  /* når der er mouse-over på .dropdown, så vis dropdown indhold*/
+  display: block;
+}
+
+
+main {
+  flex-grow:1;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+main section{
+  flex: 1;
+}
+main section.frontpage{
+  flex-grow: 0;
+}
+
+main section.image{
+  /* billedet vi bruger skal centreres og fylde hele sektionen ud*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  /* mindste-højde er 300px så den ikke forsvinder ved små skærme */
+  min-height: 300px;
+}
+
+/* wrapperen er 100% højden og ligger ovenpå baggrundsbilleder */
+.image .wrapper{
+  height:100%;
+  /* vi viser den som flex */
+  display:flex;
+  /* og alle elementer indeni den skal centreres horisontalt og vertikalt */
+  align-items: center;
+  justify-items: center;
+}
+.image .left{
+  /* venstre er tomt, og fylder 60% */
+  width:60%;
+}
+.image .description{
+  /* højre er med indhold, og fylder 40% */
+  width:40%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #415341;
+}
+.image .description h1{
+  font-size: 70px;
+  font-weight: 900;
+}
+.image .description p{
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* styling til akupunktur */
+#akupunktur .image .description{
+  color:white;
+}
+
+/* Forsiden skal bruge lidt mere plads end undersiderne */
+#forside .description{
+  width: 70%
+}
+#forside .left{
+  width: 30%;
+}
+#forside .image .description h1{
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+
+/* forskellige billeder på hver artikel */
+main#aromaterapi section.image{
+  background-image: url("../images/380073287_698764428980654_5062723230079715083_n.png");
+}
+
+main#urtemedicin section.image{
+  background-image: url("../images/385475237_2507296072770162_1290206516045076794_n.png");
+}
+
+main#akupunktur section.image{
+  background-image: url("../images/380129994_698370905673517_1401786665143806377_n.png");
+}
+
+main#forside section.image{
+  background-image: url("../images/380719236_307188802060355_8742663499970051498_n.png");
+}
+
+
+
+main section.text{
+  background-color: #e0dacb;
+  /* alm. styling */
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* farver til artikel */
+main section.text.artikel{
+  background-color: #e0dacb;
+  color: #415341;
+  /* en lille border op til toppen */
+  border-top: 1px solid #415341;
+}
+main section.text.behandlingsformer{
+  background-color: #bfbfbf;
+  color: black;
+}
+
+/* forsidens nederste sektion har mindstehøjre for 250px */
+main section.frontpage{
+  background-color: #9dac92;
+  min-height: 250px;
+}
+main section.frontpage .wrapper{
+  display:flex;
+  gap: 30px;
+}
+main section.frontpage .thumbnail{
+  /* 250px i højden */
+  height: 250px;
+  /* og med negativ margin så "hopper vi op" af designet */
+  margin-top:-40px;
+  flex:1;
+  background-position: center center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* relativ position gør at vi kan absolute positionere alle elementer under, i forhold til dette element */
+  position:relative;
+}
+/* baggrunde specifikt til frontpage */
+main section.frontpage .thumbnail.image-1{
+  background-image: url('../images/384541981_878927447180736_7494613056356661224_n.png');
+}
+main section.frontpage .thumbnail.image-2{
+  background-image: url('../images/380581488_3703215153239765_1776388425868174045_n (1).png');
+}
+main section.frontpage .thumbnail.image-3{
+  background-image: url('../images/380840755_1622617988478877_6332557871123181063_n.png');
+}
+
+/* generel styling til teaser-teksterne på forsidens thumbnail */
+main section.frontpage .thumbnail .teaser{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  /* med width får vi en max-linie-længde på teksterne */
+  width: 210px;
+}
+
+main section.frontpage .thumbnail .teaser .headline{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* specifik styling til hver teaser */
+main section.frontpage .thumbnail.image-1 .teaser{
+  position:absolute;
+  right:20px;
+  top: 20px;
+  color: #415341;
+}
+
+main section.frontpage .thumbnail.image-2 .teaser{
+  position:absolute;
+  left:50px;
+  bottom: 30px;
+  color: white;
+}
+
+main section.frontpage .thumbnail.image-3 .teaser{
+  position:absolute;
+  right:20px;
+  bottom: 20px;
+  color: #415341;
+}
+
+
+
+main section.text .wrapper{
+  /* vis som flex */
+  display:flex;
+  /* mellemrum mellem elementerne */
+  gap: 20px;
+}
+
+main section.text.behandlingsformer .wrapper > div{
+  /* fordel pladsen mellem de to pladser */
+  width:33.3%;
+}
+
+main section.text.artikel .wrapper > div{
+  /* fordel pladsen mellem de to pladser */
+  width:50%;
+}
+
+/* Styling til alt tekst */
+.text{
+  /* tekst-størelsen er 12px */
+  font-size: 10px;
+}
+
+/* sæt størrelsen til 1.2 enheder af bund-størrelsen */
+.text h1{
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.text h2{
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.text h3{
+  font-size: 14px;
+  font-weight: 700;
+  margin: 9px 0 3px 0;
+}
+
+/* */
+.text p{
+  font-size: 15px;
+  margin-bottom: 3px;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+.text a.button{
+  /* styling af link-knap */
+  padding: 16px 16px;
+  margin-top: 10px;
+  color:#e0dacb;
+  background: #415341;
+
+  /* indholdet skal rykke til højre */
+  float:right;
+
+  /* en lille afstand til venstre, når der er flere knapper i float */
+  margin-left: 20px;
+}
+
+footer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  padding: 30px 0;
+  background-color: #415341;
+  color:white;
+}
+footer .wrapper p{
+  text-align:center;
+}
+
+.wrapper.headline{
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+/* styling til text */
+.italic{
+  font-style: italic;
+}
+.bold{
+  font-weight: bold;
+}
+.underline{
+  text-decoration: underline;
+}
+.padding-top-10{
+  padding-top:10px;
+}
